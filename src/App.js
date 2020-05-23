@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+// import { Alphabet } from './components/alphabet/Alphabet';
+// import { GameSelector } from './components/gameSelector/gameSelector';
+import { ScattergoriesBoard } from './components/scattergoriesBoard/ScattergoriesBoard';
+import { Flex } from 'rebass';
+
 function App() {
+  // const [game, setGame] = useState('scattergories');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <section className="App-main">
+        <Flex
+          flexDirection="column"
+          width="100%"
         >
-          Learn React
-        </a>
-      </header>
+          <ScattergoriesBoard />
+        </Flex>
+      </section>
     </div>
   );
 }
