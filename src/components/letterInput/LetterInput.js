@@ -4,9 +4,7 @@ import {
 	Text,
 } from 'rebass';
 import {
-	Label,
 	Input,
-	Checkbox,
 } from '@rebass/forms';
 
 export const LetterInput = props => {
