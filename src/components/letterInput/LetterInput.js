@@ -12,7 +12,7 @@ export const LetterInput = props => {
 			letterText,
 			letterValue,
 	} = props;
-
+	console.log(letterValue)
 	return (
 		<Flex
 			alignItems="center"

@@ -3,8 +3,7 @@ import { letterData } from './letterData';
 import { LetterInput } from '../letterInput/LetterInput';
 import { Flex } from 'rebass';
 
-export const Alphabet = (props) => {
-  const { ruleset } = props;
+export const Alphabet = () => {
   
   return (
     <Flex 
@@ -19,7 +18,7 @@ export const Alphabet = (props) => {
         {letterData.slice(0, 13).map(letter => (
           <LetterInput
             letterText={letter.letterText}
-            letterValue={letter.values[ruleset]}
+            letterValue={letter.letterValue}
           />
         ))}
       </Flex>
@@ -29,7 +28,7 @@ export const Alphabet = (props) => {
         {letterData.slice(13).map(letter => (
         <LetterInput
           letterText={letter.letterText}
-          letterValue={letter.values[ruleset]}
+          letterValue={letter.letterValue}
         />        
       ))}
       

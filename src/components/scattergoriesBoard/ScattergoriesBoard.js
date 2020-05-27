@@ -11,10 +11,6 @@ export const ScattergoriesBoard = () => {
   const [roundThreeScore, setRoundThreeScore] = useState(0);
 
   const handleScore = () => {
-    console.log(roundOneScore);
-    console.log(roundTwoScore);
-    console.log(roundThreeScore);
-
     setTotalScore((roundOneScore || 0)+ (roundTwoScore || 0) + (roundThreeScore || 0));
   }
 
