@@ -11,10 +11,6 @@ export const ScattergoriesBoard = () => {
   const [roundThreeScore, setRoundThreeScore] = useState(0);
 
   const handleScore = () => {
-    console.log(roundOneScore);
-    console.log(roundTwoScore);
-    console.log(roundThreeScore);
-
     setTotalScore((roundOneScore || 0)+ (roundTwoScore || 0) + (roundThreeScore || 0));
   }
 
@@ -50,7 +46,6 @@ export const ScattergoriesBoard = () => {
             </Text>
             <ScattergoriesCard 
               onScoreUpdate={setRoundOneScore}
-              updateTotalScore={handleScore}
             />
           </Flex>
           
@@ -65,7 +60,6 @@ export const ScattergoriesBoard = () => {
             </Text>
             <ScattergoriesCard 
               onScoreUpdate={setRoundTwoScore}
-              updateTotalScore={handleScore}
             />
           </Flex>
 
@@ -80,7 +74,6 @@ export const ScattergoriesBoard = () => {
             </Text>
             <ScattergoriesCard 
               onScoreUpdate={setRoundThreeScore}
-              updateTotalScore={handleScore}
             />
           </Flex>
           </Flex>
