@@ -14,7 +14,6 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
         <section className="App-main">
           <Flex
               flexDirection="column"
@@ -31,7 +30,6 @@ function App() {
             </Switch>
           </Flex>
         </section>
-      </div>
     </Router>
    
   );

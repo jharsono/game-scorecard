@@ -19,7 +19,6 @@
 
 .sticky-header {
   background-color: #282c34;
-  border-bottom: 1px solid black;
   width: 100%
 }
 @keyframes App-logo-spin {
