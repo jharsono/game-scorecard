@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
 	Flex,
   Image,
@@ -12,12 +12,12 @@ import xInactive from '../../assets/x-inactive.png';
 
 export const ScattergoriesInput = (props) => {
   const [isCrossedOut, setIsCrossedOut] = useState(false);
-  const inputRef = useRef();
+  const [inputText, setInputText] = useState('');
 
   return(
     <Flex>
       <Input
-        ref={inputRef}
+        onChange={e => setInputText(e.target.value)}
         disabled={isCrossedOut}
         sx={{
           textDecoration: `${isCrossedOut ? "line-through" : "none"}`,
@@ -35,10 +35,11 @@ export const ScattergoriesInput = (props) => {
         }}>
         </Input>
 
-        <Flex
+        {!!inputText && (
+          <Flex
           onClick={() => setIsCrossedOut(!isCrossedOut)}
           alignItems="flex-end"
-        >
+          >
           <Image
             src={isCrossedOut ? xActive : xInactive}
             sx={{
@@ -47,7 +48,9 @@ export const ScattergoriesInput = (props) => {
               ml: '8px',
             }}
           />
-        </Flex>
+          </Flex>
+        )}
+    
     </Flex>
    
   )
