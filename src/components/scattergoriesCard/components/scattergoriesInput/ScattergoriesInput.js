@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	Flex,
   Image,
@@ -13,6 +13,19 @@ import xInactive from '../../assets/x-inactive.png';
 export const ScattergoriesInput = (props) => {
   const [isCrossedOut, setIsCrossedOut] = useState(false);
   const [inputText, setInputText] = useState('');
+  const [pointValue, setPointValue] = useState(0);
+
+  const handleChange = () => {
+    if (inputText && !isCrossedOut) {
+      setPointValue(1);
+    } else {
+      setPointValue(0);
+    }
+  }
+
+  useEffect(() => {
+    handleChange();
+  })
 
   return(
     <Flex>
@@ -50,7 +63,6 @@ export const ScattergoriesInput = (props) => {
           />
           </Flex>
         )}
-    
     </Flex>
    
   )
