@@ -1,11 +1,12 @@
 import React from 'react';
 import {
 	Flex,
-	Text,
+  Text,
 } from 'rebass';
 import {
 	Input,
 } from '@rebass/forms';
+import { ScattergoriesInput } from './components/scattergoriesInput/ScattergoriesInput';
 
 export const ScattergoriesCard = (props) => {
   const { onScoreUpdate } = props;
@@ -19,6 +20,7 @@ export const ScattergoriesCard = (props) => {
       {[...Array(12)].map((e, i) => (
         <Flex
           flexDirection="column"
+          key={i}
         >
           <Flex
             alignItems="center"
@@ -28,7 +30,8 @@ export const ScattergoriesCard = (props) => {
             >
               {i + 1}
             </Text>
-            <Input></Input>
+           <ScattergoriesInput />
+
           </Flex>
         </Flex>
       ))}
