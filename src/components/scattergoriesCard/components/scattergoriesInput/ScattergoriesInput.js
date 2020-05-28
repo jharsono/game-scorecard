@@ -24,6 +24,7 @@ export const ScattergoriesInput = (props) => {
           borderTop: 0,
           borderLeft: 0,
           borderRight: 0,
+          p: '4px',
           ':focus': {
             borderTop: 0,
             borderLeft: 0,
@@ -36,7 +37,7 @@ export const ScattergoriesInput = (props) => {
 
         <Flex
           onClick={() => setIsCrossedOut(!isCrossedOut)}
-          alignItems="center"
+          alignItems="flex-end"
         >
           <Image
             src={isCrossedOut ? xActive : xInactive}

@@ -23,12 +23,12 @@ export const ScattergoriesCard = (props) => {
           key={i}
         >
           <Flex
-            alignItems="center"
+            alignItems="flex-end"
           >
             <Text
               minWidth="40px"
             >
-              {i + 1}
+              {i + 1}.
             </Text>
            <ScattergoriesInput />
 
