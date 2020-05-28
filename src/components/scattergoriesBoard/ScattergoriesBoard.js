@@ -39,9 +39,7 @@ export const ScattergoriesBoard = () => {
             flexDirection="column"
             alignItems="center"
           >
-            <Text
-              pl="40px"
-            >
+            <Text>
               Round 1
             </Text>
             <ScattergoriesCard 
@@ -53,9 +51,7 @@ export const ScattergoriesBoard = () => {
             flexDirection="column"
             alignItems="center"
           >
-            <Text
-              pl="40px"
-            >
+            <Text>
               Round 2
             </Text>
             <ScattergoriesCard 
@@ -67,9 +63,7 @@ export const ScattergoriesBoard = () => {
             flexDirection="column"
             alignItems="center"
           >
-            <Text
-              pl="40px"
-            >              
+            <Text>              
               Round 3
             </Text>
             <ScattergoriesCard 
