@@ -15,7 +15,6 @@ export const ScattergoriesInput = (props) => {
   const [isCrossedOut, setIsCrossedOut] = useState(false);
   const [inputText, setInputText] = useState('');
   const [pointValue, setPointValue] = useState(0);
-  const copyOfArray = roundScoreArray;
 
   const handleInput = (inputValue) => {
     setInputText(inputValue || '');

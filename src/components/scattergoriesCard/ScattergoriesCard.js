@@ -3,9 +3,6 @@ import {
 	Flex,
   Text,
 } from 'rebass';
-import {
-	Input,
-} from '@rebass/forms';
 import { ScattergoriesInput } from './components/scattergoriesInput/ScattergoriesInput';
 
 export const ScattergoriesCard = (props) => {
