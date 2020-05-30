@@ -11,28 +11,41 @@ import xInactive from '../../assets/x-inactive.png';
 
 
 export const ScattergoriesInput = (props) => {
+  const { onSetRoundScore, roundScoreArray, setRoundScoreArray, index } = props;
   const [isCrossedOut, setIsCrossedOut] = useState(false);
   const [inputText, setInputText] = useState('');
   const [pointValue, setPointValue] = useState(0);
+  const copyOfArray = roundScoreArray;
 
-  const handleChange = () => {
+  const handleInput = (inputValue) => {
+    setInputText(inputValue || '');
+    setPointValue(inputValue ? 1 : 0);
+  }
+
+  const handleCrossOut = () => {
+    setIsCrossedOut(!isCrossedOut)
     if (inputText && !isCrossedOut) {
-      setPointValue(1);
-    } else {
       setPointValue(0);
+    } else {
+      setPointValue(1);
     }
   }
 
   useEffect(() => {
-    handleChange();
-  })
+    roundScoreArray[index] = pointValue;
+    setRoundScoreArray(roundScoreArray);
+    onSetRoundScore();
+  }, [pointValue])
 
   return(
-    <Flex>
+    <Flex
+      maxWidth={['90%', '80%']}
+    >
       <Input
-        onChange={e => setInputText(e.target.value)}
+        onChange={e => handleInput(e.target.value)}
         disabled={isCrossedOut}
         sx={{
+          fontSize: '16px',
           textDecoration: `${isCrossedOut ? "line-through" : "none"}`,
           borderTop: 0,
           borderLeft: 0,
@@ -47,22 +60,22 @@ export const ScattergoriesInput = (props) => {
           },
         }}>
         </Input>
-
-        {!!inputText && (
-          <Flex
-          onClick={() => setIsCrossedOut(!isCrossedOut)}
+        <Flex
+          onClick={handleCrossOut}
           alignItems="flex-end"
-          >
-          <Image
-            src={isCrossedOut ? xActive : xInactive}
-            sx={{
-              width: '30px',
-              height: '30px',
-              ml: '8px',
-            }}
-          />
-          </Flex>
-        )}
+          sx={{
+            visibility: inputText ? 'visible' : 'hidden',
+          }}
+        >
+        <Image
+          src={isCrossedOut ? xActive : xInactive}
+          sx={{
+            width: '30px',
+            height: '30px',
+            ml: '8px',
+          }}
+        />
+        </Flex>
     </Flex>
    
   )

@@ -33,45 +33,24 @@ export const ScattergoriesBoard = () => {
       <Flex
           width="100%"
           flexDirection={["column", "column", "row"]}
-          pt="10px"
+          justifyContent="center"
         >
-          <Flex
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Text>
-              Round 1
-            </Text>
-            <ScattergoriesCard 
-              onScoreUpdate={setRoundOneScore}
-            />
-          </Flex>
-          
-          <Flex
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Text>
-              Round 2
-            </Text>
-            <ScattergoriesCard 
-              onScoreUpdate={setRoundTwoScore}
-            />
-          </Flex>
+          <ScattergoriesCard
+            roundNumber="1"
+            onScoreUpdate={setRoundOneScore}
+          />
+        
+          <ScattergoriesCard
+            roundNumber="2"
+            onScoreUpdate={setRoundTwoScore}
+          />
 
-          <Flex
-            flexDirection="column"
-            alignItems="center"
-          >
-            <Text>              
-              Round 3
-            </Text>
-            <ScattergoriesCard 
-              onScoreUpdate={setRoundThreeScore}
-            />
-          </Flex>
-          </Flex>
+
+          <ScattergoriesCard
+            roundNumber="3"
+            onScoreUpdate={setRoundThreeScore}
+          />
+        </Flex>
     </Flex>
-   
   )
 }
