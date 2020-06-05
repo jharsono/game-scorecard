@@ -19,7 +19,7 @@ export const Alphabet = (props) => {
         {letterData.slice(0, 13).map(letter => (
           <LetterInput
             letterText={letter.letterText}
-            letterValue={letter.values[ruleset]}
+            letterValue={letter.letterValue}
           />
         ))}
       </Flex>
@@ -29,7 +29,7 @@ export const Alphabet = (props) => {
         {letterData.slice(13).map(letter => (
         <LetterInput
           letterText={letter.letterText}
-          letterValue={letter.values[ruleset]}
+          letterValue={letter.letterValue}
         />        
       ))}
       
