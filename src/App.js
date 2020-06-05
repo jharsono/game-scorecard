@@ -9,14 +9,14 @@ import {
 import { Alphabet } from './components/alphabet/Alphabet';
 import { ScattergoriesBoard } from './components/scattergoriesBoard/ScattergoriesBoard';
 import { Flex } from 'rebass';
-import { HowToPlayModal } from './components/howToPlayModal/HowToPlayModal';
-import { useModal } from './hooks/useModal';
+// import { HowToPlayModal } from './components/howToPlayModal/HowToPlayModal';
+// import { useModal } from './hooks/useModal';
 
 
 function App() {
-  const [Modal, open, close] = useModal('root', {
-    preventScroll: true
-  });
+  // const [Modal, open, close] = useModal('root', {
+  //   preventScroll: true
+  // });
  
   return (
     <Router>
@@ -26,11 +26,11 @@ function App() {
               flexDirection="column"
               width="100%"
             >
-            <Modal>
+            {/* <Modal>
               <HowToPlayModal 
                 onClose={close}
               />
-            </Modal>
+            </Modal> */}
             <Switch>
               <Route path="/picture-picture/card">
                 <Alphabet />
