@@ -34,7 +34,7 @@ export const ScattergoriesInput = (props) => {
     roundScoreArray[index] = pointValue;
     setRoundScoreArray(roundScoreArray);
     onSetRoundScore();
-  }, [pointValue])
+  }, [pointValue, roundScoreArray, index, setRoundScoreArray, onSetRoundScore])
 
   return(
     <Flex

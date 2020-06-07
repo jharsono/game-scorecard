@@ -6,8 +6,9 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Alphabet } from './components/alphabet/Alphabet';
+import { Alphabet } from './components/picturePicture/alphabet/Alphabet';
 import { ScattergoriesBoard } from './components/scattergoriesBoard/ScattergoriesBoard';
+import { PicturePictureGame } from './components/picturePicture/picturePictureGame/PicturePictureGame';
 import { Flex } from 'rebass';
 // import { HowToPlayModal } from './components/howToPlayModal/HowToPlayModal';
 // import { useModal } from './hooks/useModal';
@@ -32,6 +33,9 @@ function App() {
               />
             </Modal> */}
             <Switch>
+            <Route path="/picture-picture/">
+                <PicturePictureGame />
+              </Route>
               <Route path="/picture-picture/card">
                 <Alphabet />
               </Route>
