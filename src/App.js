@@ -33,16 +33,17 @@ function App() {
               />
             </Modal> */}
             <Switch>
-            <Route path="/picture-picture/">
+              <Route path="/picture-picture/card">
+                  <Alphabet />
+                </Route>
+
+              <Route path="/picture-picture/">
                 <PicturePictureGame />
               </Route>
-              <Route path="/picture-picture/card">
-                <Alphabet />
-              </Route>
+
               <Route path="/">
                 <ScattergoriesBoard />
               </Route>
-
             </Switch>
           </Flex>
         </section>

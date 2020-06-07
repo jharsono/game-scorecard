@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import { images } from './assets/Images';
 import '../../../App.css';
 import { randomNumber } from '../../../utils/utils';
@@ -6,33 +7,60 @@ import {
 	Box,
 	Flex,
   Button,
-  Text,
+	Text,
  } from 'rebass';
+ import { Input } from '@rebass/forms'
 
  export const PicturePictureGame = (props) => {
 	const [isVisible, setIsVisible] = useState(false)
-	// const { onStart } = props;
+	const [time, setTime] = useState(90)
 
 	const handleClickStart = () => {
 		setIsVisible(!isVisible);
-		// onStart(true);
 	}
 
 	return (
 		<>		
 			{!isVisible && (
-				<Button
-					variant='primary'
-					onClick={handleClickStart}
+				<Flex
+					alignItems="center"
+					flexDirection="column"
 				>
-					<Text
-						fontSize={[ 3, 4, 5 ]}
-						fontWeight='bold'
-						color='black'
+					<Flex
+						alignItems="center"
+						m="20px"
+						justifyContent="space-between"
 					>
-						Start
-					</Text>
-				</Button>
+						<Text
+							mr="10px"
+						>
+							Timer
+						</Text>
+						<Input
+							sx={{
+								width: "100px"
+							}}
+							id='Timer'
+							name='Timer'
+							type='number'
+							value={time}
+							onChange={(e) => setTime(e.target.value)}
+						/>
+					</Flex>
+					<Button
+						variant='primary'
+						onClick={handleClickStart}
+						width="200px"
+					>
+						<Text
+							fontSize={[ 3, 4, 5 ]}
+							fontWeight='bold'
+							color='black'
+						>
+							Start
+						</Text>
+					</Button>
+				</Flex>		
 			)}
 			{isVisible && (
 				<Flex
@@ -43,25 +71,28 @@ import {
 							position: "relative",
 						}}
 					>
-						<img src={(images[randomNumber(0, 40)])} className="picture-picture" alt="Picture Picture" />
+						<img src={(images[randomNumber(0, 40)])} className="picture-picture" alt="game" />
 						<Box
 						sx={{
 							position: "absolute",
-							bottom: "20px",
-							right: "20px",
-							bg: "black",
-							opacity: "70%"
+							top: "5px",
+							right: "5px",
+							bg: "#282c34",
+							borderRadius:"50%"
 						}}
 					>
-						<Text
-							color="white"
-						>
-							90
-						</Text>
+							<CountdownCircleTimer
+								isPlaying={isVisible}
+								size={60}
+								strokeWidth={6}
+								duration={time}
+								colors={[['#ffffff', 1]]}
+								trailColor={'#282c34'}
+							>
+								{({ remainingTime }) => remainingTime}
+							</CountdownCircleTimer>
+						</Box>
 					</Box>
-					</Box>
-					
-					
 				</Flex>
 			)}
 		</>
