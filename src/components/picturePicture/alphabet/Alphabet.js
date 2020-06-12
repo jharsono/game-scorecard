@@ -9,7 +9,7 @@ export const Alphabet = (props) => {
       flexDirection="row"
       maxHeight="100vh"
       minWidth="60%"
-      justifyContent="space-around"
+      justifyContent="center"
     >
       <Flex
           flexDirection="column"

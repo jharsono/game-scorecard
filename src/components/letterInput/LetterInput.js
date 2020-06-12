@@ -31,16 +31,19 @@ export const LetterInput = props => {
 	return (
 		<Flex
 			alignItems="center"
-			justifyContent="space-evenly"
+			justifyContent="space-evenly"	
 		>
 				<Flex
 					width="10%"
 				>
-					<Text>{letterText}</Text>
+					<Text
+						m="2px"
+					>{letterText}</Text>
 					{letterValue > 1 && (
 						<Text
 						verticalAlign="super"
-						fontSize="10px"
+						fontSize={['8px', '8px', '10px']}
+						ml="4px"
 					>
 						{letterValue}
 					</Text>
@@ -80,7 +83,7 @@ export const LetterInput = props => {
           sx={{
             width: '30px',
             height: '30px',
-            ml: '8px',
+            ml: '2px',
           }}
         />
         </Flex>
