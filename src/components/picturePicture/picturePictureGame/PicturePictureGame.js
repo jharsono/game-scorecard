@@ -44,7 +44,7 @@ import {
 							name='Timer'
 							type='number'
 							value={time}
-							onChange={(e) => setTime(e.target.value)}
+							onChange={(e) => setTime(parseInt(e.target.value))}
 						/>
 					</Flex>
 					<Button
@@ -82,14 +82,17 @@ import {
 						}}
 					>
 							<CountdownCircleTimer
-								isPlaying={isVisible}
+								onComplete={() => {
+									return [false];
+								}}
+								isPlaying
 								size={60}
 								strokeWidth={6}
 								duration={time}
 								colors={[['#ffffff', 1]]}
 								trailColor={'#282c34'}
 							>
-								{({ remainingTime }) => remainingTime}
+								{({ remainingTime }) =>  remainingTime}
 							</CountdownCircleTimer>
 						</Box>
 					</Box>
